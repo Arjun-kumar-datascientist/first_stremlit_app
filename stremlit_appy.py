@@ -41,3 +41,10 @@ my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
 my_data_rows = my_cur.fetchall()
 streamlit.header("THE FRUIT LOAD LIST CONTAINS")
 streamlit.dataframe(my_data_rows)
+
+# Allow the end user to add a fruit to the list
+add_my_fruit = 'jackfruit'
+streamlit.write('Thanks for adding', add_my_fruit)
+
+#This will not work correctly, but just go with it for now
+my_cur.execute("insert into fruit_load_list values ('from streamlit')")
